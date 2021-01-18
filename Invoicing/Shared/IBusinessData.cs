@@ -6,8 +6,8 @@ namespace Invoicing.Shared
     public interface IBusinessData
     {
         IEnumerable<Invoice> AllInvoices { get; }
-        decimal SalesRevenue { get; }
-        decimal Outstanding { get; }
+        decimal CA { get; }
+        decimal Apayer { get; }
 
         public void Add(Invoice newInvoice);
     }

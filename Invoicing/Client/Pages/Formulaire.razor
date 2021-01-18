@@ -1,6 +1,7 @@
 ﻿@page "/formulaire"
 
 @inject HttpClient http
+@inject NavigationManager NavigationManager 
 
 <h3>Formulaire</h3>
 
@@ -54,7 +55,16 @@
 
         if (isValid)
         {
-            await http.PostAsJsonAsync<Invoice>("api/invoices", invoice);
+            try
+            {
+                await http.PostAsJsonAsync<Invoice>("api/invoices", invoice);
+            }
+            finally
+            {
+                NavigationManager.NavigateTo("/invoices");
+            }
+
+
         }
 
         /*if (!response.IsSuccessStatusCode)

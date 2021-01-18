@@ -21,15 +21,15 @@ namespace Invoicing.Server.Controllers
         [HttpGet("{value}")]
         public ActionResult<decimal> GetData(string value)
         {
-            if (value == "salesrevenue")
+            if (value == "ca")
             {
-                decimal salesrevenue = _data.AllInvoices.Sum(invoice => invoice.Amount);
-                return salesrevenue;
+                decimal ca = _data.AllInvoices.Sum(invoice => invoice.Amount);
+                return ca;
             }
-            else if (value == "outstanding")
+            else if (value == "aPayer")
             {
-                decimal outstanding = _data.AllInvoices.Sum(invoice => invoice.Amount - invoice.Paid);
-                return outstanding;
+                decimal aPayer = _data.AllInvoices.Sum(invoice => invoice.Amount - invoice.Paid);
+                return aPayer;
             }
             else
             {

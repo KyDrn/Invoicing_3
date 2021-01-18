@@ -23,9 +23,9 @@ namespace Invoicing.Shared
             AllInvoices = testInvoices;
         }
 
-        public decimal SalesRevenue => testInvoices.Sum(invoice => invoice.Amount);
+        public decimal CA => testInvoices.Sum(invoice => invoice.Amount);
 
-        public decimal Outstanding => testInvoices.Sum(invoice => invoice.Amount - invoice.Paid);
+        public decimal Apayer => testInvoices.Sum(invoice => invoice.Amount - invoice.Paid);
 
         public IEnumerable<Invoice> AllInvoices { get; set; }
 

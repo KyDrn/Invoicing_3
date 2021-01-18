@@ -42,7 +42,7 @@ namespace Invoicing.Shared
         [Required(ErrorMessage = "Amount reference is required")]
         public decimal Amount { get; set; }
 
-        public decimal Paid { get; private set; } = 0m;
+        public decimal Paid { get; set; } = 0m;
 
         [Required(ErrorMessage = "Created field is required")]
         public DateTime Created { get; set; } 
